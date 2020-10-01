@@ -43,10 +43,8 @@ deleteItem(key) {
 
     this.setState({
         items: filteredItems,
-
-        
     });
-    console.log(filteredItems);
+ 
 }
 
     render(){
