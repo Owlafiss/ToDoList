@@ -25,13 +25,12 @@ addItem(e){
             return {
                 items: prevState.items.concat(newItem)
             };
-        });
+
+        }, () => { console.log(this.state.items)});
     }
 
 
     this._inputElement.value = "";          // once the value is submitted, clear out the input
-
-    console.log(this.state.items);
 
     e.preventDefault();                     // preventing the page to reload 
 }
@@ -43,7 +42,7 @@ deleteItem(key) {
 
     this.setState({
         items: filteredItems,
-    });
+    }, () => { console.log(this.state.items)});
  
 }
 
@@ -59,7 +58,7 @@ deleteItem(key) {
                     </form>
                 </div>
                 <TodoItems entries={this.state.items} 
-                            delete={this.deleteItem}/>
+                            onDelete={this.deleteItem}/>
             </div>
         )
     }
