@@ -10,14 +10,14 @@
     font-size : 16px;
     margin: 10px;
     margin-right: 0px;
-    background-color: #0066FF;
+    background-color: #3aa18d;
     color: #FFF;
-    border: 2px solid #0066FF;
+    border: 2px solid #3aa18d;
 }
 
 .todoListMain .header button:hover {
-    background-color: #003399;
-    border: 2px color #003399;
+    background-color: #166d5b;
+    border: 2px color #166d5b;
     cursor:pointer;
 }
 

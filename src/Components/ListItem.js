@@ -8,19 +8,30 @@ export default class ListItem extends Component {
         onDelete: PropTypes.func.isRequired,
     }*/
 
+
+
     deleteHandler = () => {
         const { onDelete, item } = this.props;
-
         if (onDelete) onDelete(item.key);
     }
 
+    clickHandler = () => {
+        
+    }
+
     render(){
-        const { item } = this.props;
-        debugger;
+        const { item} = this.props;
+        
         return (
-             <li onClick={this.deleteHandler}
-                    key={item.key}>{item.text}
-            </li>
+             <>
+             <input type='checkbox' />
+                <li onDoubleClick={this.deleteHandler}
+                        key={item.key}>{item.text}
+                </li>
+            <button type="button" className="btn">
+              Edit
+            </button>
+            </>
         )
     }
 }
