@@ -20,13 +20,16 @@ export default class ListItem extends Component {
     }
 
     render(){
-        const { item} = this.props;
+        const {item} = this.props;
         
         return (
              <>
-             <input type='checkbox' />
-                <li onDoubleClick={this.deleteHandler}
-                        key={item.key}>{item.text}
+                 <li onDoubleClick={this.deleteHandler} key={item.key}>
+                    <dl>
+                        <dt>
+                        <input type='checkbox'/> {item.text}
+                        </dt>
+                    </dl> 
                 </li>
             <button type="button" className="btn">
               Edit
