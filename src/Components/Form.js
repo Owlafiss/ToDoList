@@ -1,5 +1,5 @@
 
-import React, { Component} from "react";
+import React, { Component } from "react";
 import TodoItems from "./TodoItems";
 
 
@@ -10,25 +10,21 @@ export default class Form extends Component {
     
     this.state = {                                     // setting constructor for the state
         items: [],
-    };
-        
-    this.addItem = this.addItem.bind(this);
-    this.deleteItem = this.deleteItem.bind(this); 
-              
+        }
     };
 
-    addItem(e){
-        if (this._inputElement.value !== ""){              // creating the item
-            var newItem = {                             
+    addItem = (e) => {
+        if (this._inputElement.value !== ""){   
+            const initialList = [{                             
                 text: this._inputElement.value,         
                 key: Date.now(),                            // since we deal with array, we need a key for every element of the array
-                completed: false,
-                // textDecor: null
-            };
-    
+                isComplete: false,
+                
+                },
+            ];
             this.setState ((prevState) => {                //fit the state of the array to have the new key inside it
                 return {
-                    items: prevState.items.concat(newItem),
+                    items: prevState.items.concat(initialList),
                 };
     
             }, () => { console.log(this.state.items)});
@@ -40,7 +36,7 @@ export default class Form extends Component {
         e.preventDefault();                     // preventing the page to reload 
     }
 
-    deleteItem(key) {
+    deleteItem = (key) => {
         var filteredItems = this.state.items.filter(function(item){
             return (item.key !== key)
         });
@@ -50,33 +46,14 @@ export default class Form extends Component {
         }, () => { console.log(this.state.items)});
      
     }
-
-    /*todoCompleted(key){
-        var items =[...this.state.items]
-
-        if(!items[key].checked){
-            items[key].checked = true;
-            items[key].textDecor='line'
-            this.setState({
-                items
-            });
-        }
-        else {
-            items[key].checked = false;
-            items[key].textDecor = null
-            this.setState({
-                items
-            });
-        }
-    }*/
-        
+ 
     render () {
         return(
             <div className="header">
                 <form onSubmit={this.addItem}>
                     <h1 className="label-wrapper">
                         <label htmlFor="new-todo-input" className="label__lg">
-                            To-Dos
+                            What needs to be done?
                         </label>
                     </h1>
                     <input

@@ -27,7 +27,14 @@ export default class ListItem extends Component {
                  <li onDoubleClick={this.deleteHandler} key={item.key}>
                     <dl>
                         <dt>
-                        <input type='checkbox'/> {item.text}
+                            <span
+                            style={{
+                                textDecoration: item.isComplete
+                                ? 'line-through'
+                                : 'none',
+                            }}>
+                                <input type='checkbox'/> {item.text}
+                            </span>
                         </dt>
                     </dl> 
                 </li>

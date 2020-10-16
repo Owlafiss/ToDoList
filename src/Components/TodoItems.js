@@ -8,6 +8,16 @@ export default class TodoItems extends Component {
         if(onDelete) onDelete (key);
     }
 
+   /* editHandler = (key, newText) => {
+        const editedTaskList = props.items.map(item => {
+            if(key === item.key) {
+                return {...item, text: newText}
+            }
+            return item;
+        });
+        setItems(editedTaskList);
+    }*/
+    
     /*
     Track the state from Todoitems here. Assign unique IDs to each List item, and then check the array when rendering it
     to see if the item is completed or not.
@@ -19,13 +29,14 @@ export default class TodoItems extends Component {
 
         return (
             <ul className="theList">
-                {entries.map(entry => {
+                {entries.map((entry) => {
                     return (
                         <ListItem 
                         item={entry} 
                         key={entry.key} 
-                        completed={entry.completed} 
-                        onDelete={this.deleteHandler} />
+                        isComplete={entry.isComplete} 
+                        onDelete={this.deleteHandler}
+                        onEdit={this.editHandler} />
                     )
                 })}
             </ul>
