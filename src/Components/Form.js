@@ -29,10 +29,7 @@ export default class Form extends Component {
     
             }, () => { console.log(this.state.items)});
         }
-    
-    
         this._inputElement.value = "";          // once the value is submitted, clear out the input
-    
         e.preventDefault();                     // preventing the page to reload 
     }
 
@@ -40,11 +37,9 @@ export default class Form extends Component {
         var filteredItems = this.state.items.filter(function(item){
             return (item.key !== key)
         });
-    
         this.setState({
             items: filteredItems,
         }, () => { console.log(this.state.items)});
-     
     }
  
     render () {
@@ -74,7 +69,6 @@ export default class Form extends Component {
                            onDelete={this.deleteItem}/>
                 </div>
             </div>
-
         )
     }
 }

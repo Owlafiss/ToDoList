@@ -8,15 +8,9 @@ export default class ListItem extends Component {
         onDelete: PropTypes.func.isRequired,
     }*/
 
-
-
     deleteHandler = () => {
         const { onDelete, item } = this.props;
         if (onDelete) onDelete(item.key);
-    }
-
-    clickHandler = () => {
-        
     }
 
     render(){

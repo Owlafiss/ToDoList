@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ListItem from './ListItem';
 
 export default class TodoItems extends Component {
+    
     deleteHandler = (key) => {
         const { onDelete } = this.props;
 
@@ -24,8 +25,8 @@ export default class TodoItems extends Component {
      */
 
     render(){
+
         const { entries } = this.props;
-        
 
         return (
             <ul className="theList">
