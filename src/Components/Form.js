@@ -46,7 +46,7 @@ export default class Form extends Component {
         }, () => { console.log(this.state.items)});
      
     }
- 
+
     render () {
         return(
             <div className="header">
